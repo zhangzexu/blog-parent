@@ -1,0 +1,44 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<div class="seach" th:fragment="seach">
+    <form class="layui-form seach-box" action="" >
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button class="layui-btn"><i class="layui-icon layui-icon-search"></i></button>
+                <input type="text" name="username" lay-verify="required" placeholder="搜索相关" autocomplete="off" class="layui-input">
+            </div>
+        </div>
+    </form>
+
+
+    <script th:src="@{/res/layui/layui.js}"></script>
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <!--[if lt IE 9]>
+    <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+    <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+
+    <![endif]-->
+    <script th:inline="javascript" type="text/javascript">
+        var context = [[@{/}]];
+        layui.config({
+            base: context+'res/static/js/'
+        }).use('layBlog');
+        
+        
+       try {
+           var gitalk = new Gitalk({
+               clientID: '27b993ae215b8329db98',
+               clientSecret: 'de2ee4f9d01aa43c0ea69565362ea92977985676',
+               repo: 'management-center',
+               owner: 'zhangzexu',
+               admin: ['zhangzexu'],
+               id: location.pathname,      // Ensure uniqueness and length less than 50
+               distractionFreeMode: false  // Facebook-like distraction free mode
+           })
+           gitalk.render('gitalk-container')
+       }catch (e) {
+           
+       }
+
+    </script>
+</div>
+</html>

@@ -1,0 +1,10 @@
+#监控相关配置
+management:
+  security:
+    enabled: false
+info:
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "@project.description@"
+    version: "@project.version@"
+    spring-boot-version: "@project.parent.version@"

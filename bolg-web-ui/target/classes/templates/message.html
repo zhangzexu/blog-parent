@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head">
+</head>
+<body>
+<!-- 侧边内容 -->
+<div th:replace="/fragments/side :: side"></div>
+
+
+<div class="main message">
+    <div class="item">
+        <div class="layui-card">
+            <div class="layui-card-header">
+                <form class="layui-form" action="messageSend">
+                    <div class="layui-form-item layui-form-text">
+                        <div class="layui-input-block">
+                            <textarea placeholder="既然来了,就说几句吧" class="layui-textarea" name="message"></textarea>
+                            <div class="btn-box">
+                                <button class="layui-btn" type="submit" id="item-btn">确实</button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="layui-card-body">
+                <div class="title">
+                    <p><span>全部留言</span><em id="count">1</em></p>
+                </div>
+                <ul class="list-item" id="LAY-msg-box">
+                    <li>
+                        <img th:src="@{/res/static/img/avatar.jpg}" alt="">
+                        <div class="list-txt">
+                            <p class="max-title"><span class="name">小汪汪</span><span class="time">2018/06/06</span></p>
+                            <p class="list-content">适合具备一定的Javascript基础知识的读者阅读,也适合从事程序设计工作并想要深入探索Javascript语言的读者阅读。
+                                您不需要具备任何的Javascript基础知识及项目经验，通过学习这本书。 将会在面试有关Javascript程序设计的职位是游刃有余</p>
+                            <p class="list-content">sdsdssd</p>
+                        </div>
+                    </li>
+                </ul>
+                <div id="demo1"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- 搜索框 -->
+<div th:replace="/fragments/seach :: seach"></div>
+</body>
+</html>

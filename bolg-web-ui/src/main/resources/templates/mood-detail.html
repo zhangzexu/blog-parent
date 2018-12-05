@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/fragments/head :: head">
+</head>
+<body>
+<!-- 侧边内容 -->
+<div th:replace="/fragments/side :: side"></div>
+
+
+
+  <!-- 主要内容 -->
+  <div class="main mood message  mood-details">
+    <div class="top_title">微语  &#62  微语详情</div>
+    <div class="item1">
+        <div class="item-content">
+          <p class="time"><span><i class="layui-icon layui-icon-date"></i>12:25</span><strong>2018/06/08</strong></p>
+          <p class="brief">八一建军节到了,祝所有的军人节快乐！！八一建军节到了,祝所有的军人节日快乐！！八一建军节到了,祝所有的军人节日快乐</p>
+          <img src="../res/static/img/img5.jpg" alt="">
+          <p class="praise"><span><i class="layui-icon layui-icon-praise"></i>1200</span><span><i class="layui-icon layui-icon-dialogue"></i>1200</span></p>
+        </div>
+    </div>
+      <div id="gitalk-container" style="color:#93D1FF;"></div>
+  </div>
+
+
+
+<!-- 搜索框 -->
+<div th:replace="/fragments/seach :: seach"></div>
+</body>
+</html>

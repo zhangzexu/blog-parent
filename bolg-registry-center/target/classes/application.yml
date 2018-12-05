@@ -1,0 +1,10 @@
+#监控相关配置  
+management:
+  security:
+    enabled: false
+info:
+  app:
+    name: "bolg-registry-center" #从pom.xml中获取
+    description: "Unified Payment Platform Registry Center"
+    version: "1.0-SNAPSHOT"
+    spring-boot-version: "@project.parent.version@"

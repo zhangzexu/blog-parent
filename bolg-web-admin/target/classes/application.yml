@@ -1,0 +1,11 @@
+#监控相关配置  
+management:
+  security:
+    enabled: false
+info:
+  app:
+    name: "@project.name@" #从pom.xml中获取
+    description: "Parent pom providing dependency and plugin management for applications
+		built with Maven"
+    version: "1.0-SNAPSHOT"
+    spring-boot-version: "@project.parent.version@"
