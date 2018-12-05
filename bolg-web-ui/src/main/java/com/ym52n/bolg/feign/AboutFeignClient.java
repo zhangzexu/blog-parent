@@ -14,6 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @FeignClient(name="bolg-web-admin")
 public interface AboutFeignClient {
-    @RequestMapping(value = "bolg-web-admin/about", method = RequestMethod.POST)
+    @RequestMapping(value = "bolg-web-admin/about", method = RequestMethod.GET)
     public String getAboutInfo();
 }

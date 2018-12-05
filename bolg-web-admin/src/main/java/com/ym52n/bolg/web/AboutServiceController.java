@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class AboutServiceController extends BaseController {
 
-    @RequestMapping(value = "/about",method = RequestMethod.POST)
+    @RequestMapping(value = "/about",method = RequestMethod.GET)
     public String getAboutInfo(){
 
         return "test";
