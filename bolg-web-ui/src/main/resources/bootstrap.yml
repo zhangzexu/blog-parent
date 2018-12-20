@@ -1,5 +1,5 @@
 server:
-  port: 8080
+  port: 8081
   context-path: /bolg-web-ui
 spring:
   application:
@@ -8,9 +8,13 @@ spring:
     cache: false
     mode: LEGACYHTML5
     suffix: .html
+  cloud:
+    inetutils:
+      preferred-networks:
+        - 10.0
 eureka:
   instance:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://10.1.40.116:8761/eureka/
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/

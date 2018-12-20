@@ -6,7 +6,7 @@
 
     <groupId>com.ym52n.bolg</groupId>
     <artifactId>bolg-registry-center</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>jar</packaging>
 
     <name>bolg-registry-center</name>
@@ -24,6 +24,7 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>1.8</java.version>
         <spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
+        <docker.image.prefix>zhangzexu</docker.image.prefix>
     </properties>
 
     <dependencies>
@@ -68,8 +69,18 @@
                 <groupId>com.spotify</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
                 <version>0.4.13</version>
+                <executions>
+                    <execution>
+                        <id>build-image</id>
+                        <phase>install</phase>
+                        <goals>
+                            <goal>build</goal>
+                            <goal>push</goal>
+                        </goals>
+                    </execution>
+                </executions>
                 <configuration>
-                    <imageName>zhangzexu/bolg-registry-center:0.0.1</imageName>
+                    <imageName>${docker.image.prefix}/${artifactId}:${version}</imageName>
                     <baseImage>java</baseImage>
                     <entryPoint>["java","-jar","/${project.build.finalName}.jar"]</entryPoint>
                     <resources>
@@ -83,7 +94,7 @@
                 </configuration>
             </plugin>
         </plugins>
-        <finalName>bolg-registry-center</finalName>
+        <finalName>${artifactId}</finalName>
     </build>
 
 

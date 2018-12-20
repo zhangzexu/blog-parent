@@ -1,12 +1,16 @@
 server:
-  port: 9999
+  port: 9000
   context-path: /bolg-web-admin
 spring:
   application:
     name: bolg-web-admin
+  cloud:
+    inetutils:
+      preferred-networks:
+        - 10.0
 eureka:
   instance:
     prefer-ip-address: true
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:8761/eureka/
+      defaultZone: http://peer1:8761/eureka/,http://peer2:8762/eureka/
