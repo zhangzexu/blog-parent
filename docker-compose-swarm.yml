@@ -2,13 +2,13 @@ version: "3"
 services:
   peer1:
     image: zhangzexu/bolg-registry-center:1.0.3
-    restart: on-failure
+    restart: on-failure  #重启策略
     ports:
       - 8761:8761
-    environment:
+    environment:  #配置启动使用哪个配置文件
       - spring.profiles.active=peer1
     deploy:
-      replicas: 1
+      replicas: 1  #要启动的实例个数
       restart_policy:
         condition: on-failure
   peer2:
@@ -44,5 +44,5 @@ services:
 networks:
   default:
     external:
-      name: my_net
+      name: my_net  #网卡名称
 

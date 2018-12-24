@@ -24,6 +24,7 @@
         <fastjson.version>1.1.26</fastjson.version>
         <commons-lang3.version>3.3.1</commons-lang3.version>
         <docker.image.prefix>zhangzexu</docker.image.prefix>
+        <!-- 配置自己的docker hub账户名 -->
     </properties>
     <dependencies>
         <dependency>
@@ -140,6 +141,7 @@
                     <execution>
                         <id>build-image</id>
                         <phase>install</phase>
+                        <!--添加goal，可以再打包的时候将jar包发布到docker仓库上去-->
                         <goals>
                             <goal>build</goal>
                             <goal>push</goal>
@@ -157,6 +159,7 @@
                             <include>${project.build.finalName}.jar</include>
                         </resource>
                     </resources>
+                    <!--serverId  需要在mavne setting中的配置文件中配置-->
                     <serverId>docker-hub</serverId>
                 </configuration>
             </plugin>
