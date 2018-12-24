@@ -1,18 +1,18 @@
 version: "3"
 services:
   peer1:
-    image: zhangzexu/bolg-registry-center:0.0.1
+    image: zhangzexu/bolg-registry-center:1.0.3
     restart: on-failure
     ports:
       - 8761:8761
+    environment:
+      - spring.profiles.active=peer1
     deploy:
       replicas: 1
       restart_policy:
         condition: on-failure
-    environment:
-      - spring.profiles.active=peer1
   peer2:
-    image: zhangzexu/bolg-registry-center:0.0.1
+    image: zhangzexu/bolg-registry-center:1.0.3
     restart: on-failure
     ports:
       - 8762:8762
@@ -41,14 +41,8 @@ services:
       replicas: 2
       restart_policy:
         condition: on-failure
-    visualizer:
-      image: dockersamples/visualizer:stable
-      ports:
-        - 8080:8080
-      volumes:
-        - var/run/docker.sock:/var/run/docker.sock
 networks:
   default:
     external:
-      name: my-net
+      name: my_net
 
